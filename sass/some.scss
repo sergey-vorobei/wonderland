@@ -1,0 +1,102 @@
+@import "utils/vars";
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  width: 100vw;
+  font-family: 'Comfortaa', cursive;
+}
+
+.header {
+
+  &__top-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 10px;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title-wrapper {
+    color: $title-text-color;
+  }
+
+  &__title {
+    margin: 0 0 20px 0;
+    min-width: 400px;
+    color: $title-text-color;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.2em;
+    letter-spacing: 0.2px;
+  }
+
+  &__description {
+    color: $title-text-color;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.4em;
+  }
+
+  &__image {
+    max-width: 640px;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+.form {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input {
+    display: flex;
+    flex-direction: column;
+    // width: 420px;
+  }
+  
+  &__title {
+    font-size: 50px;
+    font-weight: 600;
+  }
+}
+
+.logo {
+
+  &__image {
+    width: 174px;
+    height: 94px;
+  }
+}
+
+.menu {
+  &__list {
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: 20px;
+  }
+}
+
+.page {
+  &__header {
+    background-color: $general-yellow;
+  }
+
+  &__title {
+    color: $title-text-color;
+  }
+}

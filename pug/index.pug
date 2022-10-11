@@ -1,0 +1,19 @@
+extends not-compiling/_layout
+
+block title
+	title Index page
+block head
+	meta(name="keywords" content="")
+	meta(name="description" content="")
+
+block content
+	footer.footer
+	
+		//svg sprite how to use example
+		svg.icon-mark: use(xlink:href="#mark")
+
+	//svg sprite include
+	.svg-sprite.is-hidden
+		include ../img/svg-output/svg-sprite.svg
+
+
