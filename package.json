@@ -9,5 +9,9 @@
     "gulp-sass": "^4.0.2",
     "gulp-svg-sprite": "^1.5.0",
     "node-sass": "^4.13.0"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "slick-carousel": "^1.8.1"
   }
 }
