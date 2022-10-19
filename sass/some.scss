@@ -1,5 +1,16 @@
 @import "utils/vars";
 
+@mixin onTablet {
+  @media (max-width:768px) {
+    @content;
+  }
+}
+@mixin onDesktop {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
 body {
   margin: 0 auto;
   padding: 0;
@@ -7,54 +18,8 @@ body {
   font-family: 'Comfortaa', cursive;
 }
 
-// .grid {
-//   display: grid;
-
-//   @include onTablet {
-//     grid-template-columns: repeat(8, 1fr);
-//     gap: 24px;
-//   }
-
-//   &--tablet {
-//     display: block;
-
-//     @include onTablet {
-//       display: grid;
-//     }
-//   }
-
-//   &--desktop {
-//     display: block;
-
-//     @include onDesktop {
-//       display: grid;
-//     }
-//   }
-
-//   &__item {
-//     @for $start from 1 through 8 {
-//       @for $end from $start through 8 {
-//         &--tablet-#{$start}-#{$end} {
-//           @include onTablet {
-//             grid-column: #{$start} / #{$end + 1};
-//           }
-//         }
-//       }
-//     }
-//     @for $start from 1 through 8 {
-//       @for $end from $start through 8 {
-//         &--desktop-#{$start}-#{$end} {
-//           @include onDesktop {
-//             grid-column: #{$start} / #{$end + 1};
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-
 .page {
-  overflow-x: hidden;
+  overflow: hidden;
 
   &__block-title {
     color: $title-text-color;
@@ -62,6 +27,10 @@ body {
     font-size: 30px;
     font-weight: 600;
     line-height: 1.3;
+
+    @include onTablet {
+      font-size: 20px;
+    }
   }
 
   &__text {
@@ -71,6 +40,10 @@ body {
     font-size: 20px;
     font-weight: 300;
     color: $main-text;
+
+    @include onTablet {
+      font-size: 14px;
+    }
   }
 
   &__form {
@@ -78,16 +51,23 @@ body {
   }
 }
 
-
-
 .container {
   margin: 0 auto;
   max-width: 1280px;
+  padding: 0 40px;
+
+  @include onTablet {
+    padding: 0 20px;
+  }
 }
 
 .header {
   position: relative;
   background-color: $general-yellow;
+
+  @include onTablet {
+    margin: 0 0 30px;
+  }
 
   &::after {
     position: absolute;
@@ -114,10 +94,30 @@ body {
     z-index: 99;
   }
 
+  &__link-wrapper {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-right: 30px;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__link {
+    @extend .footer__link;
+    margin-bottom: 0;
+  }
+
   &__wrapper {
     display: flex;
     align-items: center;
     padding: 150px 0 0 0;
+
+    @include onTablet {
+      display: block;
+    }
   }
 
   &__title-wrapper {
@@ -132,6 +132,10 @@ body {
     font-weight: 700;
     line-height: 1.2em;
     letter-spacing: 0.2px;
+
+    @include onTablet {
+      font-size: 30px;
+    }
   }
 
   &__description {
@@ -139,10 +143,20 @@ body {
     font-size: 30px;
     font-weight: 400;
     line-height: 1.4em;
+
+    @include onTablet {
+      font-size: 15px;
+    }
   }
 }
 
 .logo {
+
+  &__wrapper {
+    margin-right: 20px;
+    @include onDesktop {
+    }
+  }
   &__image {
     width: 174px;
     height: 94px;
@@ -152,37 +166,80 @@ body {
 .menu {
   background-color: $general-yellow;
 
+  @include onDesktop{
+    display: none;
+  }
+
   &__list {
     display: flex;
     gap: 20px;
     list-style-type: none;
+    padding: 0;
+
+    @include onDesktop {
+      margin: 0 0 40px;
+      flex-direction: column;
+    }
+  }
+
+  &__link-wrapper {
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
   }
 
   &__link {
     color: $title-text-color;
     text-decoration: none;
     font-size: 18px;
+    @include onDesktop {
+      position: relative;
+    }
+  }
+}
+
+.menu-mobile {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color:#fff;
+  z-index: 99;
+
+  &__top {
+    margin-bottom: 50px;
+  }
+
+  &__nav-link {
+
+  }
+
+  &__bottom-link {
+    position: relative;
   }
 }
 
 .form {
 
-  &__small-form {
-    height: 400px;
-  }
+  // &__small-form {
+  // }
 
   &__large-form {
     margin: 0 0 100px;
   }
 
   &__header-container {
-    position: absolute;
-    top: -65px;
-    left: 70px;
     max-width: 400px;
     padding: 40px;
     background-color: $general-green;
     border-radius: 30px;
+
+    @include onTablet {
+      margin: -30px auto 20px;
+    }
   }
 
   &__bottom-container {
@@ -216,6 +273,9 @@ body {
     margin: 0 0 5px;
     text-align: center;
     
+    @include onTablet {
+      font-size: 25px;
+    }
   } 
 
   &__subtitle {
@@ -224,11 +284,18 @@ body {
     font-size: 20px;
     text-align: center;
     line-height: 1.5;
+
+    @include onTablet {
+      font-size: 15px;
+    }
   }
 
   &__input-container {
     width: 386px;
-
+    
+    @include onTablet {
+      width: 100%;
+    }
   }
 
   &__input {
@@ -288,7 +355,7 @@ body {
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
     &::before {
-      padding-right: 20px;
+      content: 'f2a0';
     }
   }
 }
@@ -300,16 +367,29 @@ body {
     font-weight: 400;
     text-align: end;
     color: $secondary-text;
+
+    @include onTablet {
+      margin: 0 0 50px;
+      text-align: center;
+    }
   }
   &__description {
     margin: 0 50px 50px;
     line-height: 2em;
+
+    @include onTablet {
+      font-size: 14px;
+      margin: 25px 0;
+    }
   }
 }
 
 .goals {
   margin: 0 0 100px;
 
+  @include onTablet {
+    display: none;
+  }
   &__container {
     position: relative;
     display: flex;
@@ -319,14 +399,15 @@ body {
     width: 100%;
     height: 650px;
 
+    
   }
 
   &__circle {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 358px;
-    height: 358px;
+    width: 378px;
+    height: 378px;
     padding: 30px;
     text-align: center;
     background-image: url(../img/circle.png);
@@ -334,6 +415,10 @@ body {
     background-position: center;
     background-size: contain;
     box-sizing: border-box;
+
+    @include onTablet {
+      display: none;  
+    }
   }
 
   &__main-text {
@@ -360,24 +445,24 @@ body {
 
   }
   &__goal-1 {
-    top: 100px;
-    left: 5%;
+    top: 20%;
+    left: 8%;
   }
   &__goal-2 {
-    right: 10%;
-    top: 80px;
+    right: 13%;
+    top: 13%;
   }
   &__goal-3 {
-    left: 0;
+    left: 2%;
     top: 50%;
   }
   &__goal-4 {
-    right: 0;
+    right: 2%;
     top: 40%;
   }
   &__goal-5 {
     right: 20%;
-    bottom: 0;
+    bottom: 2%;
   }
 
   &__goal-green {
@@ -405,13 +490,16 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include onTablet {
+      display: block;
+    }
   }
 
   &__title {
     margin: 0 0 30px;
     font-family: 'Comfortaa', cursive;
     font-weight: 600;
-    font-size: 30px;
 
   }
   &__list {
@@ -419,7 +507,11 @@ body {
     padding: 0;
     list-style-type: none;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 300;
+
+    @include onTablet {
+      font-size: 14px;
+    }
   }
 
   &__item {
@@ -427,7 +519,7 @@ body {
   }
 
   &__image {
-    height: 100%;
+    height: 90%;
   }
 
   &__bottom-element {
@@ -443,15 +535,24 @@ body {
 .daily-routine {
   margin: 0 0 300px;
 
+  @include onTablet {
+    margin-bottom: 200px;
+  }
+
   &__wrapper {
     padding: 0 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 60px;
+
+    @include onTablet {
+      padding: 0;
+    }
   }
   &__phrase {
     line-height: 2em;
+
   }
 
   &__popup-btn {
@@ -478,12 +579,13 @@ body {
     &::before {
       content: '';
       position: absolute;
-      top: -160px;
-      width: 100%;
-      height: 160px;
+      top: -165px;
+      left: 0;
+      right: 0;
+      height: 171px;
       background-image: url(../img/made-top-el.svg);
       background-repeat: no-repeat;
-      background-size: contain;
+      background-size: cover;
       transform: rotate(180deg);
     }
     &::after {
@@ -502,13 +604,16 @@ body {
     margin: 0 0 250px;
     display: flex;
     flex-direction: column;
+
+    @include onTablet {
+      margin-bottom: 150px;
+    }
   }
 
   &__title {
     margin: 0 0 30px;
     color: $title-text-color;
     font-weight: 600;
-    font-size: 30px;
     text-align: center;
   }
 
@@ -533,6 +638,8 @@ body {
     font-size: 20px;
     font-weight: 300;
     animation: slideInLeft;
+
+    
     &-1 {
       animation-delay: 200ms;
     }
@@ -552,13 +659,17 @@ body {
     &:last-child {
       margin: 0;
     }
+
+    @include onTablet {
+      padding: 0;
+      font-size: 14px;
+    }
   }
   
   &__subtitle {
     margin: 0 0 40px;
     color: $title-text-color;
     font-weight: 300;
-    font-size: 30px;
     line-height: 1.3;
   }
 
@@ -566,13 +677,17 @@ body {
     margin: 0 0 200px;
     list-style-type: none;
     column-count: 2;
-    column-width: 20%;
+    padding: 0;
+
+    @include onTablet {
+      column-count: 1;
+      margin-bottom: 100px;
+    }
   }
 
   &__purpose {
     display: flex;
     margin: 0 0 40px;
-    font-size: 18px;
     font-weight: 300;
     line-height: 1.3;
     color: $title-text-color;
@@ -580,9 +695,10 @@ body {
   }
 
   &__number {
-    display: block;
+    position: absolute;
     width: 38px;
-    height: 52px;
+    height: 50px;
+    padding-left: -50%;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -596,11 +712,17 @@ body {
   }
 
   &__purpose-text {
-    }
+    position: relative;
+    margin-left: 70px;
+  }
 
   &__group-wrapper {
     display: flex;
     gap: 20px;
+
+    @include onTablet {
+      display: block;
+    }
   }
 
   &__group {
@@ -608,6 +730,11 @@ body {
     padding: 40px 20px;
     width: 33%;
     background-color: $general-yellow;
+
+    @include onTablet {
+      width: auto;
+      margin-bottom: 20px;
+    }
   }
 
   &__group-title {
@@ -633,49 +760,67 @@ body {
   &__block {
     position: relative;
     display: flex;
+    align-items: center;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin: 0 0 100px;
+
+    @include onTablet {
+      display: block;
+      margin: 0 auto;
+    }
   }
 
   &__text-wrapper {
     width: 50%;
     box-sizing: border-box;
+
+    @include onTablet {
+      width: 100%;
+    }
   }
 
   &__img-plate {
-    position: fixed;
     background-image: url(../img/plate-food.jpeg);
-    background-position: right;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    width: 40%;
     min-height: 500px;
-    width: 50%;
-    z-index: -2;
+
+    @include onTablet {
+      width: 100%;
+    }
   }
   &__img-teacher {
-    margin: 0 auto;
-    max-width: 350px;
-  }
+    width: 40%;
 
-  // &__left-side {
-  //   position: absolute;
-  //   left: 0;
-  // }
-  // &__right-side {
-  //   position: absolute;
-  //   right: 0;
-  // }
+    @include onTablet {
+      width: 100%;
+    }
+  }
 
   &__paragraph {
     margin: 0 0 40px;
     line-height: 1.4;
+
+    @include onTablet {
+      line-height: 2;
+    }
   }
 }
 
 .subjects {
   margin: 0 0 250px;
+
+  @include onTablet {
+    margin: 0 0 100px;
+  }
+
   &__top-block {
     background-color: $general-green;
+
+   
 
     &::after {
       content: '';
@@ -686,20 +831,33 @@ body {
       background-position: center;
       background-size: contain;
     }
+
+    &--el {
+      transform: rotate(180deg);
+    }
+
   }
   &__wrapper {
     position: relative;
     display: flex;
     align-items: center;
     min-height: 300px;
+    @include onTablet {
+      min-height: 200px;
+    }
   }
   &__title-wrapper {
+    margin-left: 10%;
     max-width: 720px;
   }
   &__title {
     margin: 0 0 20px;
     font-size: 40px;
     text-align: center;
+
+    @include onTablet {
+      font-size: 20px;
+    }
   }
 
   &__img-book {
@@ -710,41 +868,63 @@ body {
     height: 200px;
     background-image: url(../img/books.png);
     background-size: cover;
+
+    @include onTablet {
+      width: 70px;
+      height: 70px;
+    }
   }
 
   &__list {
-    margin: 0 0 50px  ;
+    margin: 0 0 80px  ;
     padding: 0;
+    font-size: 18px;
     column-count: 2;
     column-gap: 80px;
     list-style-type: none;
+
+    @include onTablet {
+      padding-top: 50px;
+      column-count: 1;
+      font-size: 14px;
+    }
   }
 
   &__item {
     margin-bottom: 20px;
-    font-size: 18px;
     font-weight: 400;
     line-height: 1.4em;
     color: $main-text;
   }
   &__paragraph {
     margin: 0 0 32px;
+    line-height: 2;
   }
 }
 
 .wonderland {
+  margin: 0 0 50px;
   color: $primary-text;
+
   &__block {
     position: relative;
     padding: 40px;
-    margin: 0 0 200px;
+    margin: 0 0 300px;
     background-color: $general-yellow;
     border-radius: 50px;
+
+    @include onTablet {
+      margin: 0 0 150px;
+    }
   }
 
   &__text-wrapper {
     width: 60%;
     text-align: center;
+
+    @include onTablet {
+      width: 100%;
+    }
   }
 
   &__title {
@@ -752,17 +932,31 @@ body {
     font-weight: 400;
   }
 
+  &__text {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
   &__top-img {
     position: absolute;
-    top: 0;
+    top: -200px;
     right: 0;
-    height: 450px;
-    width: 300px;
+    width: 40%;
+    height: 600px;
+
+
+    @include onTablet {
+      display: none;
+    }
   }
 
   &__groups-wrapper {
     display: flex;
     justify-content: space-around;
+
+    @include onTablet {
+      flex-direction: column;
+    }
   }
   &__group {
     display: flex;
@@ -802,6 +996,8 @@ body {
   &__prise-block {
     display: flex;
     justify-content: center;
+
+    
   }
   &__prise-text-wrapper {
     max-width: 880px;
@@ -823,6 +1019,10 @@ body {
       &:nth-child(-n) {
         margin: 0 0 24px;
       }
+
+      @include onTablet {
+        margin: 0 0 100px;
+      }
     }
     &-title {
       margin: 0 0 24px;
@@ -840,18 +1040,24 @@ body {
     justify-content: center;
     padding: 50px;
     background-color: $general-yellow;
+
+    @include onTablet {
+      padding: 20px;
+    }
   }
 
   &__video {
     width: 100%;
-    height: 800px;
+    height: 700px;
+
+    @include onTablet {
+      height: 350px;
+    }
   }
 }
 
 .footer {
-  & > * {
-    margin: 0 0 30px;
-  }
+  
   &__contacts-wrapper {
     position: relative;
     display: flex;
@@ -860,19 +1066,24 @@ body {
     align-items: center;
   }
   &__contacts {
-    width: 400px;
+    width: 100%;
+    margin: 0 0 50px;
     display: flex;
-    flex-direction: column;
+    gap: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+    
   }
 
   &__link {
     position: relative;
     padding-left: 50px;
-    margin: 0 0 30px;
     width: max-content;
     text-decoration: none;
     line-height: 2;
     color: $main-text;
+
     @for $index from 1 through 4 {
       &-#{$index}::before {
         position: absolute;
@@ -884,34 +1095,89 @@ body {
         content: "";
       }
     }
-  }
 
+  }
+  &__container {
+    display: flex;
+    margin: 0 0 50px;
+
+    @include onTablet {
+      margin: 0;
+      display: block;
+    }
+  }
   &__img {
+    width: 50%;
+    @include onTablet {
+      width: 100%;
+    }
   }
 
   &__top-block {
+    padding-bottom: 10px;
     background-color: $general-green;
+    &-el {
+      transform: rotate(180deg);
+    }
   }
+  &__map-wrapper {
+    width: 50%;
 
+    @include onTablet {
+      width: 100%;
+    }
+  }
   &__map {
     width: 100%;
-    height: 400px;
+    height: 100%;
   }
 }
 
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
 
-
-
-
-
-
-// @mixin onTablet {
-//   @media (min-width:744px) {
-//     @content;
-//   }
-// }
-// @mixin onDesktop {
-//   @media (min-width: 1024px) {
-//     @content;
-//   }
-// }
+#popup__wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+.popup {
+  span {
+    padding-left: 20px;
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $general-yellow;
+    border-radius: 20px;
+    padding: 40px;
+    color: $primary-text;
+  }
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  &__item {
+    margin: 0 0 20px;
+    line-height: 1.4;
+    &:last-child {
+      margin: 0;
+    }
+  }
+  
+}
