@@ -10,15 +10,44 @@
     @content;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0 auto;
   padding: 0;
   width: 100vw;
   font-family: 'Comfortaa', cursive;
+  
 }
 
+.hover {
+  transition: all 0.3s;
+  &--phone {
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+  
+  &:hover {
+    padding-bottom: 4px;
+    border-bottom: rgba(145, 144, 135, 0.7) solid 2px;
+    a {
+      color: $main-text;
+    }
+  }
+}
+.icon {
+  &__phone {
+    color: $title-text-color;
+    padding-right: 10px;
+  }
+}
 .page {
+
   overflow: hidden;
 
   &__block-title {
@@ -92,12 +121,15 @@ body {
     background-color: $general-yellow;
     overflow-x: hidden;
     z-index: 99;
+
+    @include onDesktop {
+      height: auto;
+    }
   }
 
   &__link-wrapper {
     display: flex;
     gap: 30px;
-    align-items: center;
     margin-right: 30px;
 
     @include onDesktop {
@@ -108,6 +140,7 @@ body {
   &__link {
     @extend .footer__link;
     margin-bottom: 0;
+    padding: 0;
   }
 
   &__wrapper {
@@ -136,7 +169,18 @@ body {
     @include onTablet {
       font-size: 30px;
     }
+
   }
+
+  &__banner {
+    margin: 0 auto;
+    width: 80%;
+    img {
+      width: 100%;
+    }
+  }
+
+
 
   &__description {
     color: $title-text-color;
@@ -151,12 +195,8 @@ body {
 }
 
 .logo {
+  margin-right: 20px;
 
-  &__wrapper {
-    margin-right: 20px;
-    @include onDesktop {
-    }
-  }
   &__image {
     width: 174px;
     height: 94px;
@@ -175,17 +215,21 @@ body {
     gap: 20px;
     list-style-type: none;
     padding: 0;
+    margin: 0;
 
     @include onDesktop {
       margin: 0 0 40px;
       flex-direction: column;
+      text-align: center;
     }
   }
 
   &__link-wrapper {
+    
     @include onDesktop {
       display: flex;
       flex-direction: column;
+      text-align: center;
       gap: 20px;
     }
   }
@@ -196,36 +240,79 @@ body {
     font-size: 18px;
     @include onDesktop {
       position: relative;
+      
+    }
+  }
+
+  &__burger {
+    display: none;
+    height: 30px;
+
+    @include onDesktop {
+      display: block;
     }
   }
 }
 
 .menu-mobile {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
-  background-color:#fff;
+  height: 100%;
+  overflow-y: hidden;
+  padding-top: 10px;
+  background-color: $general-yellow;
   z-index: 99;
 
-  &__top {
-    margin-bottom: 50px;
+  &__list {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0 0 80px;
+    list-style-type: none;
+  }
+  
+  &__link {
+    text-decoration: none;
+    font-size: 18px;
+    color: $main-text;
+
+    img {
+      display: inline-block;
+      height: 30px;
+      width: 30px;
+      margin: 20px 10px;
+    }
+
+    &--phone {
+      font-size: 22px;
+    }
+  }
+ 
+  &__top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 100px;
   }
 
-  &__nav-link {
-
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
   }
 
-  &__bottom-link {
-    position: relative;
+  &__btn--cross {
+    color:rgba(20, 20, 19, 0.7);
+    height: 30px;
   }
 }
 
 .form {
-
-  // &__small-form {
-  // }
 
   &__large-form {
     margin: 0 0 100px;
@@ -350,15 +437,6 @@ body {
   box-shadow: 0.1em 0.1em 1em rgba(0, 0, 0, 0.3);
 }
 
-.icon {
-  &__phone {
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    &::before {
-      content: 'f2a0';
-    }
-  }
-}
 
 .about {
   &__phrase {
@@ -475,7 +553,6 @@ body {
 
   &__bottom-element {
     position: absolute;
-    left: -10px;
     width: 30%;
     height: 30px;
     border-radius: 50px;
@@ -524,7 +601,7 @@ body {
 
   &__bottom-element {
     position: absolute;
-    right: -10px;
+    right: 0px;
     width: 30%;
     height: 30px;
     border-radius: 50px;
@@ -702,7 +779,7 @@ body {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    animation: animate__rollIn;
+    animation: rollIn;
     
     @for $index from 1 through 9 {
       &-#{$index} {
@@ -793,8 +870,10 @@ body {
     }
   }
   &__img-teacher {
-    width: 40%;
-
+    width: 50%;
+    img {
+      width: 100%;
+    }
     @include onTablet {
       width: 100%;
     }
@@ -895,6 +974,7 @@ body {
     font-weight: 400;
     line-height: 1.4em;
     color: $main-text;
+
   }
   &__paragraph {
     margin: 0 0 32px;
@@ -907,7 +987,7 @@ body {
   color: $primary-text;
 
   &__block {
-    position: relative;
+    display: flex;
     padding: 40px;
     margin: 0 0 300px;
     background-color: $general-yellow;
@@ -938,13 +1018,14 @@ body {
   }
 
   &__top-img {
-    position: absolute;
-    top: -200px;
-    right: 0;
+    position: relative;
     width: 40%;
-    height: 600px;
 
-
+    img {
+      position: absolute;
+      top: -200px;
+      width: 100%;
+    }
     @include onTablet {
       display: none;
     }
@@ -1073,17 +1154,15 @@ body {
     justify-content: space-around;
     flex-wrap: wrap;
     text-align: center;
-    
   }
 
   &__link {
     position: relative;
-    padding-left: 50px;
+    padding-left: 40px;
     width: max-content;
     text-decoration: none;
     line-height: 2;
     color: $main-text;
-
     @for $index from 1 through 4 {
       &-#{$index}::before {
         position: absolute;
@@ -1099,7 +1178,9 @@ body {
   }
   &__container {
     display: flex;
+    align-items: center;
     margin: 0 0 50px;
+    
 
     @include onTablet {
       margin: 0;
@@ -1109,6 +1190,9 @@ body {
   &__img {
     width: 50%;
     @include onTablet {
+      width: 100%;
+    }
+    img {
       width: 100%;
     }
   }
@@ -1129,7 +1213,7 @@ body {
   }
   &__map {
     width: 100%;
-    height: 100%;
+    height: 300px;
   }
 }
 
@@ -1155,9 +1239,8 @@ body {
   -ms-transform: translate(-50%,-50%);
 }
 .popup {
-  span {
-    padding-left: 20px;
-  }
+  display: none;
+  
   &__wrapper {
     display: flex;
     justify-content: space-around;
@@ -1165,7 +1248,18 @@ body {
     background-color: $general-yellow;
     border-radius: 20px;
     padding: 40px;
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: $primary-text;
+  }
+  &__close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
   }
   &__list {
     margin: 0;
@@ -1178,6 +1272,56 @@ body {
     &:last-child {
       margin: 0;
     }
+
+    time {
+      display: inline-block;
+      width: 20%;
+    }
+  }
+  &__overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0,0, .7);
   }
   
+}
+#slider {
+  display: flex;
+ div {
+   max-height: 400px;
+   img {
+     display: block;
+     max-width: 100%;
+   }
+ }
+}
+.slider {
+  margin-bottom: 50px;
+}
+.slick {
+  &-slide {
+    margin: 0 27px;
+  }
+  &-prev {
+    color: $secondary-text;
+  }
+
+  &-next {
+    color: $secondary-text;
+  }
+}
+
+/* the parent */
+.slick-list {
+  margin: 0 -27px;
+}
+
+html {
+  scroll-padding-top: 92px; /* height of sticky header */
 }
