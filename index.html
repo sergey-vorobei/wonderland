@@ -39,15 +39,28 @@
         <div class="logo">
           <img
             class="logo__image"
-            src="/img/logo.png"
+            src="img/logo.png"
             alt="WonderLand"
           >
         </div>
         
         <div class="header__link-wrapper">
-          <a class="header__link footer__link-1" href="https://www.facebook.com/wonderland.holosiivsky/"></a>
-          <a class="header__link footer__link-2" href="https://www.instagram.com/wonderland_holosiivsky/"></a>
-          <a class="header__link hover--phone" href="tel:800 339 859"> <i class="fa-solid fa-phone-volume icon__phone"></i>0 800 339 859</a>
+          <a class="
+            header__link
+            footer__link-1
+          " href="https://www.facebook.com/wonderland.holosiivsky/"
+            target="_blank"
+          ></a>
+          <a class="
+            header__link
+            footer__link-2
+          " href="https://www.instagram.com/wonderland_holosiivsky/"
+            target="_blank"
+          ></a>
+          <a class="
+            header__link
+            hover--phone
+          " href="tel:800 339 859"> <i class="fa-solid fa-phone-volume icon__phone"></i>0 800 339 859</a>
         </div>
 
         <nav class="page__menu menu">
@@ -73,21 +86,17 @@
 
 
       <div id="menu-mobile" class="menu-mobile">
-        <div class="container">
-          <div class="menu-mobile__top-section">
-            <div class="logo__wrapper">
-              <a class="logo" href="#">
-                <img
-                  class="logo__image"
-                  src="/img/logo.png"
-                  alt="WonderLand"
-                >
-              </a>
-            </div>
-            
-            <div id="menu-hide">
-              <i class="fa-solid fa-xmark menu-mobile__btn--cross"></i>
-            </div>
+        <div class="menu-mobile__top-section">
+          <div class="logo">
+            <img
+              class="logo__image"
+              src="img/logo.png"
+              alt="WonderLand"
+            >
+          </div>
+          
+          <div id="menu-hide">
+            <i class="fa-solid fa-xmark menu-mobile__btn--cross"></i>
           </div>
         </div>
 
@@ -189,6 +198,7 @@
             </section>
           </div>
         </div>
+        
         <section class="about">
           <div class="container">
             <h2 class="about__phrase page__block-title">Це не просто садочок, це поклик душі!</h2>
@@ -243,56 +253,56 @@
 
         <section id="advantages" class="advantages">
           <div class="container">
-            <div class="advantages__container">
+            <div class="advantages__container wow">
               <div class="advantages__list-wrapper">
-                <h2 class="advantages__title page__block-title">Наші переваги:</h2>
+                <h2 class="advantages__title page__block-title">Наші <span class="underline">переваги</span>:</h2>
                 <ul class="advantages__list">
-                  <li class="advantages__item">
+                  <li class="advantages__item animate__animated wow">
                     <i class="fas fa-solid fa-check-double"></i>
                     <span>закрита територія з цілодобовою охороною та системою відео нагляду;</span>
                   </li>
 
-                  <li class="advantages__item">
+                  <li class="advantages__item animate__animated wow">
                     <i class="fas fa-solid fa-check-double"></i>
                     <span>пожежна сигналізація;</span>
                   </li>
 
-                  <li class="advantages__item">
+                  <li class="advantages__item animate__animated wow">
                     <i class="fas fa-solid fa-check-double"></i>
                     <span>уроки безпеки з дітьми та персоналом;</span>
                   </li>
 
-                  <li class="advantages__item">
+                  <li class="advantages__item animate__animated wow">
                     <i class="fas fa-solid fa-check-double"></i>
                     <span>блокування вікон, дверей та розеток;</span>
                   </li>
 
-                  <li class="advantages__item">
+                  <li class="advantages__item animate__animated wow">
                     <i class="fas fa-solid fa-check-double"></i>
                     <span>меблі й оздоблення з екологічно чистих матеріалів;</span>
                   </li>
 
-                  <li class="advantages__item">
+                  <li class="advantages__item animate__animated wow">
                     <i class="fas fa-solid fa-check-double"></i>
                     <span>зручний режим роботи з 8:30 до 18:30;</span>
                   </li>
 
-                  <li class="advantages__item">
+                  <li class="advantages__item animate__animated wow">
                     <i class="fas fa-solid fa-check-double"></i>
                     <span>продумані не травматичні майданчики;</span>
                   </li>
 
-                  <li class="advantages__item">
+                  <li class="advantages__item animate__animated wow">
                     <i class="fas fa-solid fa-check-double"></i>
                     <span>ліцензія на освітні послуги;</span>
                   </li>
 
-                  <li class="advantages__item">
+                  <li class="advantages__item animate__animated wow">
                     <i class="fas fa-solid fa-check-double"></i>
                     <span>п’ятиразове збалансоване харчування</span>
                   </li>
 
-                  <li class="advantages__item">
+                  <li class="advantages__item animate__animated wow">
                     <i class="fas fa-solid fa-check-double"></i>
                     <span>допомога батькам у питаннях розвитку і адаптації дитини.</span>
                   </li>
@@ -431,7 +441,7 @@
             </div>
           </div>
           <div class="container">
-            <h2 class="made__subtitle page__block-title">Садочок та батьки – <strong>це одне ціле</strong> і мають спільну мету - виростити наших малюків щасливими, здоровими, розумними та вихованими:</h2>
+            <h2 class="made__subtitle page__block-title">Садочок та батьки – <strong><span class="underline">це одне ціле</span></strong> і мають спільну мету - виростити наших малюків щасливими, здоровими, розумними та вихованими:</h2>
       
             <ul class="made__purpose-list-second">
               <li class="made__purpose">
@@ -550,15 +560,18 @@
               <div class="made__group-wrapper">
                 <div class="made__group">
                   <h3 class="made__group-name">Сенсорна група</h3>
+                  <i class="fa-solid fa-copy"></i>
                   <p class="made__description">це інтерактивне предметно-ігрове поле для активної діяльності дітей раннього та молодшого дошкільного віку, де кожен малюк пізнає навколишній світ засобами сенсорної системи. За основу ми взяли методику Марії Монтессорі, за якою виховання відбувається природнім шляхом через моторну, сенсорну та інтелектуальну активізацію. Працюючи з матеріалами, дитина набуває власний сенсорний досвід, дізнається про ознаки предметів та розвиває велику і дрібну моторику, яка є запорукою подальшого гармонійного розвитку дитини</p>
                 </div>
                 <div class="made__group">
                   <h3 class="made__group-name">LEGO-група</h3>
+                  <i class="fa-solid fa-shapes"></i>
                   <p class="made__description">це освітній простір для розвитку пізнавального і творчого потенціалу дітей середнього дошкільного віку. Основним принципом роботи кімнати конструювання є «Навчання через гру», що робить процес засвоєння знань цікавим та простим. LEGO допомагає дітям втілювати в життя свої задуми, будувати і фантазувати, захоплено працювати і бачити кінцевий результат своєї роботи</p>
                 </div>
       
                 <div class="made__group">
                   <h3 class="made__group-name">STEM-група</h3>
+                  <i class="fa-solid fa-splotch"></i>
                   <p class="made__description">це сучасне середовище, де дитина старшого дошкільного віку пізнає, досліджує, експериментує, конструює. STEM-іграшки вчать досліджувати та опановувати закони природи. STEM-освіта спонукає до інтегрованого мислення. Це особистісний розвиток і соціалізація, виховання у дошкільників гнучкості та критичного мислення</p>
                 </div>
               </div>
@@ -570,7 +583,7 @@
           <div class="container">
             <div class="personal__block">
               <div class="personal__text-wrapper personal__left-side">
-                <p class="page__text personal__paragraph"><strong>Медична сестра</strong> закладу ретельно контролює якість збалансованого якісного харчування і проводить профілактичні заходи з охорони здоров'я малюків.</p>
+                <p class="page__text personal__paragraph"><strong><span class="underline">Медична сестра</span></strong> закладу ретельно контролює якість збалансованого якісного харчування і проводить профілактичні заходи з охорони здоров'я малюків.</p>
       
                 <p class="page__text personal__paragraph">Ми обов’язково врахуємо всі ваші побажання, якщо виникне необхідність у формуванні особливого меню для вашої дитини.</p>
       
@@ -587,8 +600,8 @@
                 <img src="img/teacher.svg" alt="Вчитель">
               </div>
               <div class="personal__text-wrapper personal__right-side">
-                <p class="page__text personal__paragraph"><strong>Практичний психолог</strong> , як справжній друг для дитини та батьків допомагає легко адаптуватись до умов нового середовища, дає цінні індивідуальні поради, сприяє розвитку психічних процесів та використовує арт-терапевтичні технології.</p>
-                <p class="page__text personal__paragraph">Складні звуки – не біда, адже в нас за це відповідає <strong>вчитель-логопед</strong>, проводить корекційну діяльність з кожним малюком.</p>
+                <p class="page__text personal__paragraph"><strong><span class="underline">Практичний психолог</span></strong> , як справжній друг для дитини та батьків допомагає легко адаптуватись до умов нового середовища, дає цінні індивідуальні поради, сприяє розвитку психічних процесів та використовує арт-терапевтичні технології.</p>
+                <p class="page__text personal__paragraph">Складні звуки – не біда, адже в нас за це відповідає <strong><span class="underline">вчитель-логопед</span></strong>, проводить корекційну діяльність з кожним малюком.</p>
               </div>
             </div>
           </div>
@@ -860,19 +873,43 @@
           <div class="container">
             <div class="footer__contacts-wrapper">
               <div class="footer__contacts">
-                <a class="footer__link footer__link-1 hover--phone" href="https://www.facebook.com/wonderland.holosiivsky/">
+                <a class="
+                  footer__link
+                  footer__link-1
+                  hover--phone
+                " href="https://www.facebook.com/wonderland.holosiivsky/"
+                  target="_blank"
+                >
                   WonderLand
                 </a>
                 
-                <a class="footer__link footer__link-2 hover--phone" href="https://www.instagram.com/wonderland_holosiivsky/">
+                <a class="
+                  footer__link
+                  footer__link-2
+                  hover--phone
+                " href="https://www.instagram.com/wonderland_holosiivsky/"
+                  target="_blank"
+                >
                   @WonderLand
                 </a>
                 
-                <a class="footer__link footer__link-3 hover--phone" href="tel:0800339859">
+                <a class="
+                  footer__link
+                  footer__link-3
+                  hover--phone
+                  " href="tel:0800339859"
+                  target="_blank"
+                  >
                   0 800 339 859
                 </a>
                 
-                <a class="footer__link footer__link-4 hover--phone" href="mailto:wonderland.holosiivsky@gmail.com">
+                <a class="
+                footer__link
+                footer__link-4
+                hover--phone
+                " href="mailto:wonderland.holosiivsky@gmail.com"
+                target="_blank"
+                >
                   WonderLand.holosiivsky@gmail.com
                 </a>
               </div>
