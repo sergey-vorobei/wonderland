@@ -172,6 +172,7 @@ body {
         display: block; } }
 
 .menu-mobile {
+  display: none;
   position: fixed;
   top: 0;
   right: 0;
