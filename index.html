@@ -7,32 +7,28 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="img/logo.png">
-    <link rel="stylesheet" href="css/some.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     
-    <!--    animate css-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <!--    jquery-->
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" />
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    
-    <!--    slick -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/>
     <link rel="stylesheet" href="css/some.css">
-    <script type="text/javascript" src="js/slick.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <!--    jquery-->
+    <script defer src="https://code.jquery.com/jquery-2.2.4.min.js" />
+    <script defer type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    
+    <!--    slick -->
+    <script defer type="text/javascript" src="js/slick.js"></script>
     
     <!--fa-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
     <!--    wow-->
-    <script src="js/wow.min.js"> </script>
-    <script src="js/app.js"></script>
+    <script defer src="js/wow.min.js"> </script>
+    <script defer src="js/app.js"></script>
     
   </head>
   <body>
@@ -83,15 +79,15 @@
           </div>
         </div>
 
-        <span class="header__menu--show">Menu <i class="fa-solid fa-angle-down"></i></span>
+        <span class="header__menu--show hover">Меню <i class="fa-solid fa-angle-down"></i></span>
 
         <nav class="page__menu menu">
           <ul class="menu__list">
-            <li class="menu__item ">
+            <li class="menu__item menu">
               <a class="menu__link hover" href="#advantages">Наші переваги</a>
             </li>
       
-            <li class="menu__item ">
+            <li class="menu__item" id="popup-trigger-nav">
               <a class="menu__link hover" href="#daily-routine">Розпорядок дня</a>
             </li>
       
@@ -852,7 +848,7 @@
           </div>
 
           <div class="wonderland__video-wrapper">
-            <iframe class="wonderland__video" frameborder="0" allowfullscreen="1" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="Дитячий садочок «Wonderland» запрошує у гості! Голосіївський район ЖК Park Avenue" width="100%" height="100%" src="https://www.youtube.com/embed/jQ9L8fmAbEQ?controls=1&amp;rel=0&amp;playsinline=1&amp;modestbranding=0&amp;autoplay=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.wonderlandgarden.com.ua&amp;widgetid=3" id="widget4"></iframe>
+            <iframe class="wonderland__video" frameborder="0" allowfullscreen="1" title="Дитячий садочок «Wonderland» запрошує у гості! Голосіївський район ЖК Park Avenue" width="100%" height="100%" src="https://www.youtube.com/embed/jQ9L8fmAbEQ?controls=1&origin=https://www.wonderlandgarden.com.ua/" ></iframe>
           </div>
         </section>
         
@@ -911,62 +907,56 @@
             <path class="elementor-shape-fill" d="M766.1,28.9c-200-57.5-266,65.5-395.1,19.5C242,1.8,242,5.4,184.8,20.6C128,35.8,132.3,44.9,89.9,52.5C28.6,63.7,0,0,0,0 h1000c0,0-9.9,40.9-83.6,48.1S829.6,47,766.1,28.9z" fill="#D3FFCC"></path>
           </svg>
         </div>
+
         <div class="footer__top-block">
           <div class="container">
-            <div class="footer__contacts-wrapper">
-              <div class="footer__contacts">
-                <a class="
+            <div class="footer__container">
+              <div class="footer__contacts-wrapper">
+                <div class="footer__contacts">
+                  <a class="
+                    footer__link
+                    footer__link-1
+                    hover--phone
+                  " href="https://www.facebook.com/wonderland.holosiivsky/"
+                    target="_blank"
+                  >
+                    Wonderland
+                  </a>
+                  
+                  <a class="
+                    footer__link
+                    footer__link-2
+                    hover--phone
+                  " href="https://www.instagram.com/wonderland_holosiivsky/"
+                    target="_blank"
+                  >
+                    @Wonderland
+                  </a>
+                  
+                  <a class="
+                    footer__link
+                    footer__link-3
+                    hover--phone
+                    " href="tel:0800339859"
+                    target="_blank"
+                    >
+                    0 800 339 859
+                  </a>
+                  
+                  <a class="
                   footer__link
-                  footer__link-1
+                  footer__link-4
                   hover--phone
-                " href="https://www.facebook.com/wonderland.holosiivsky/"
-                  target="_blank"
-                >
-                  Wonderland
-                </a>
-                
-                <a class="
-                  footer__link
-                  footer__link-2
-                  hover--phone
-                " href="https://www.instagram.com/wonderland_holosiivsky/"
-                  target="_blank"
-                >
-                  @Wonderland
-                </a>
-                
-                <a class="
-                  footer__link
-                  footer__link-3
-                  hover--phone
-                  " href="tel:0800339859"
+                  " href="mailto:wonderland.holosiivsky@gmail.com"
                   target="_blank"
                   >
-                  0 800 339 859
-                </a>
-                
-                <a class="
-                footer__link
-                footer__link-4
-                hover--phone
-                " href="mailto:wonderland.holosiivsky@gmail.com"
-                target="_blank"
-                >
-                  Wonderland.holosiivsky@gmail.com
-                </a>
+                    Wonderland.holosiivsky@gmail.com
+                  </a>
+                </div>
               </div>
-          
-            </div>
-            <div class="">
-              <div class="container">
-                <div class="footer__container">
-                  <div class="footer__map-wrapper">
-                    <iframe class="footer__map"  frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=Wonderland%20%D0%9F%D1%80%D0%B8%D0%B2%D0%B0%D1%82%D0%BD%D0%B8%D0%B9%20%D0%94%D0%B8%D1%82%D1%8F%D1%87%D0%B8%D0%B9%20%D1%81%D0%B0%D0%B4%D0%BE%D1%87%D0%BE%D0%BA%20%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F%20%D0%94%D0%B5%D0%BC%D1%96%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%B0%2C%2031%20%D0%9A%D0%B8%D1%97%D0%B2%2003040&amp;t=m&amp;z=15&amp;output=embed&amp;iwloc=near" title="Wonderland Приватний Дитячий садочок вулиця Деміївська, 31 Київ 03040" aria-label="Wonderland Приватний Дитячий садочок вулиця Деміївська, 31 Київ 03040"></iframe>
-                  </div>
-
-                  <div class="footer__img">
-                    <img src="img/footer-people.svg" alt="комунікація">
-                  </div>
+              
+              <div class="footer__map-wrapper">
+                <iframe class="footer__map"  frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=Wonderland%20%D0%9F%D1%80%D0%B8%D0%B2%D0%B0%D1%82%D0%BD%D0%B8%D0%B9%20%D0%94%D0%B8%D1%82%D1%8F%D1%87%D0%B8%D0%B9%20%D1%81%D0%B0%D0%B4%D0%BE%D1%87%D0%BE%D0%BA%20%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F%20%D0%94%D0%B5%D0%BC%D1%96%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%B0%2C%2031%20%D0%9A%D0%B8%D1%97%D0%B2%2003040&amp;t=m&amp;z=15&amp;output=embed&amp;iwloc=near" title="Wonderland Приватний Дитячий садочок вулиця Деміївська, 31 Київ 03040" aria-label="Wonderland Приватний Дитячий садочок вулиця Деміївська, 31 Київ 03040"></iframe>
               </div>
             </div>
           </div>

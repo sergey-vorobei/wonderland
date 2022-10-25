@@ -20,33 +20,47 @@ $(document).ready(function(){
   });
 
 
+  //POPUP
+
   $('#popup-trigger').on('click', () => {
     $('#popup').show();
-    // fadeIn
   })
+
   $('#popup-hide').on('click', () => {
     $('#popup').hide();
-    // fadeOut
   })
 
+  // Menu Mobile
   $('#menu-trigger').on('click', () => {
     $('#menu-mobile').show();
-    // fadeIn
   })
+
   $('#menu-hide').on('click', () => {
     $('#menu-mobile').hide();
-    // fadeOut
+  })
+  $('.menu-mobile__link').on('click', () => {
+    $('#menu-mobile').hide();
   })
 
+//Header MENU
   $('.header__menu--show').on('mouseover', () => {
     $('.menu').fadeIn();
-    // fadeIn
-  })
-  $('header__menu--show').on('mouse', () => {
-    $('.menu').fadeOut();
-    // fadeOut
   })
 
+  $('.header__menu--show').on('click', () => {
+    $('.menu').fadeOut();
+  })
+
+  $('.menu').on('mouseover', () => {
+    $('.menu').fadeIn();
+  })
+  // $('.menu').on('mouseout', () => {
+  //   $('.menu').fadeOut();
+  // })
+  $('.page').on('click', () => {
+    $('.menu').fadeOut();
+  })
 
 });
+
 

@@ -12,7 +12,9 @@
 }
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 150px; /* height of sticky header */
 }
+
 
 body {
   min-width: 355px;
@@ -74,6 +76,7 @@ body {
 
   &__form {
     position: relative;
+    margin: 0 0 100px;
   }
 }
 
@@ -248,8 +251,8 @@ body {
 
   background-color: $general-yellow;
 
-  @include onTablet {
-    display: none;
+  @include onDesktop {
+    display: none !important; 
   }
 
   &__list {
@@ -500,7 +503,7 @@ body {
 .goals {
   margin: 0 0 100px;
 
-  @include onTablet {
+  @include onDesktop {
     display: none;
   }
   &__container {
@@ -511,17 +514,14 @@ body {
     object-position: 50% 50%;
     width: 100%;
     height: 650px;
-
-    
   }
 
   &__circle {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 378px;
-    height: 378px;
-    padding: 30px;
+    height: 25vw;
+    padding: 20px 0 ;
     text-align: center;
     background-image: url(../img/circle.png);
     background-repeat: no-repeat;
@@ -535,6 +535,9 @@ body {
   }
 
   &__main-text {
+    display: flex;
+    width: 45%;
+    justify-content: center;
     font-size: 25px;
     font-weight: 600;
   }
@@ -566,11 +569,11 @@ body {
     top: 13%;
   }
   &__goal-3 {
-    left: 2%;
+    left: 4%;
     top: 50%;
   }
   &__goal-4 {
-    right: 2%;
+    right: 4%;
     top: 40%;
   }
   &__goal-5 {
@@ -754,7 +757,8 @@ body {
   }
 
   &__list {
-    margin: 0;
+    max-width: 80%;
+    margin: 0 auto;
     padding: 0;
     list-style-type: none;
   }
@@ -767,6 +771,7 @@ body {
     margin: 0 0 64px;
     font-size: 20px;
     font-weight: 300;
+    line-height: 2;
     animation: slideInLeft;
 
     
@@ -774,15 +779,15 @@ body {
       animation-delay: 200ms;
     }
     &-2 {
-      padding-left: 50px;
+      padding-left: 100px;
       animation-delay: 400ms;
     }
     &-3 {
-      padding-left: 100px;
+      padding-left: 150px;
       animation-delay: 600ms;
     }
     &-4 {
-      padding-left: 150px;
+      padding-left: 200px;
       animation-delay: 800ms;
     }
 
@@ -1209,19 +1214,24 @@ body {
   
   &__contacts-wrapper {
     position: relative;
+    width: 50%;
     display: flex;
-    padding: 0 20px;
     justify-content: space-between;
     align-items: center;
+    box-sizing: border-box;
   }
+
   &__contacts {
     width: 100%;
-    margin: 0 0 50px;
     display: flex;
+    flex-direction: column;
     gap: 20px;
-    justify-content: space-around;
     flex-wrap: wrap;
     text-align: center;
+
+    @include onTablet {
+      margin: 0 0 50px;
+    }
   }
 
   &__link {
@@ -1244,8 +1254,8 @@ body {
         content: "";
       }
     }
-
   }
+
   &__container {
     display: flex;
     align-items: center;
@@ -1255,15 +1265,6 @@ body {
     @include onTablet {
       margin: 0;
       display: block;
-    }
-  }
-  &__img {
-    width: 50%;
-    @include onTablet {
-      width: 100%;
-    }
-    img {
-      width: 100%;
     }
   }
 
@@ -1308,6 +1309,7 @@ body {
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
 }
+
 .popup {
   display: none;
   
@@ -1348,7 +1350,6 @@ body {
     time {
       min-width: 130px;
     }
-    
   }
   &__overlay {
     position: fixed;
@@ -1361,8 +1362,8 @@ body {
     bottom: 0;
     background: rgba(0,0,0, .7);
   }
-  
 }
+
 #slider {
   display: flex;
  div {
@@ -1373,31 +1374,38 @@ body {
    }
  }
 }
+
 .slider {
   margin-bottom: 50px;
 
 }
+
 .slick {
   &-slide {
     margin: 0 27px;
   }
- 
+  
   &-prev::before {
+    font-size: 30px;
     color: $button-color;
+    @include onTablet {
+      font-size: 20px;
+    }
   }
 
   &-next::before {
+    font-size: 30px;
     color: $button-color;
+
+    @include onTablet {
+      font-size: 20px;
+    }
   }
 }
 
 /* the parent */
 .slick-list {
   margin: 0 -27px;
-}
-
-html {
-  scroll-padding-top: 150px; /* height of sticky header */
 }
 
 .underline {
