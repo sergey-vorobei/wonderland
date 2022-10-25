@@ -38,6 +38,15 @@ $(document).ready(function(){
     // fadeOut
   })
 
+  $('.header__menu--show').on('mouseover', () => {
+    $('.menu').fadeIn();
+    // fadeIn
+  })
+  $('header__menu--show').on('mouse', () => {
+    $('.menu').fadeOut();
+    // fadeOut
+  })
+
 
 });
 

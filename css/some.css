@@ -4,15 +4,14 @@ html {
 body {
   min-width: 355px;
   margin: 0 auto;
-  padding: 0;
-  font-family: 'Comfortaa', cursive, sans-serif; }
+  padding: 0; }
 
 .hover {
   transition: all 0.3s; }
   .hover--phone {
     transition: all 0.3s; }
     .hover--phone:hover {
-      transform: scale(1.2); }
+      transform: scale(1.1); }
   .hover:hover {
     padding-bottom: 4px;
     border-bottom: rgba(145, 144, 135, 0.7) solid 2px; }
@@ -24,6 +23,7 @@ body {
   padding-right: 10px; }
 
 .page {
+  font-family: 'Comfortaa', sans-serif;
   overflow: hidden; }
   .page__block-title {
     color: #4B4A4A;
@@ -86,15 +86,35 @@ body {
       .header__top-action {
         height: auto; } }
   .header__link-wrapper {
+    position: relative;
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 30px;
     margin-right: 30px; }
     @media (max-width: 1024px) {
       .header__link-wrapper {
         display: none; } }
+  .header__social-wrapper {
+    min-width: -moz-max-content;
+    min-width: max-content; }
+  .header__contacts-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: end; }
   .header__link {
     margin-bottom: 0;
-    padding: 0; }
+    margin-left: 15px; }
+  .header__menu--show {
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+    color: #7A7A7A;
+    font-size: 18px;
+    cursor: pointer; }
+    @media (max-width: 1024px) {
+      .header__menu--show {
+        display: none; } }
   .header__wrapper {
     display: flex;
     align-items: center;
@@ -128,6 +148,17 @@ body {
     @media (max-width: 768px) {
       .header__description {
         font-size: 15px; } }
+  .header__phrase {
+    margin-bottom: 50px;
+    margin-right: 5%;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: end;
+    color: #54595F; }
+    @media (max-width: 768px) {
+      .header__phrase {
+        margin: 0 0 50px;
+        text-align: center; } }
 
 .logo {
   margin-right: 20px;
@@ -139,15 +170,23 @@ body {
       width: 120px; } }
 
 .menu {
+  position: inherit;
+  top: 12%;
+  right: 0;
+  display: none;
+  border-radius: 10px;
   background-color: #FFF7B9; }
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
     .menu {
       display: none; } }
   .menu__list {
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    gap: 30px;
     list-style-type: none;
-    padding: 0;
+    padding: 20px;
     margin: 0; }
     @media (max-width: 1024px) {
       .menu__list {
@@ -161,7 +200,7 @@ body {
       text-align: center;
       gap: 20px; } }
   .menu__link {
-    color: #4B4A4A;
+    color: #7A7A7A;
     text-decoration: none;
     font-size: 18px; }
     @media (max-width: 1024px) {
@@ -319,17 +358,6 @@ body {
   border-radius: 20px;
   box-shadow: 0.1em 0.1em 1em rgba(0, 0, 0, 0.3); }
 
-.about__phrase {
-  margin: 0 0 100px;
-  font-size: 20px;
-  font-weight: 400;
-  text-align: end;
-  color: #54595F; }
-  @media (max-width: 768px) {
-    .about__phrase {
-      margin: 0 0 50px;
-      text-align: center; } }
-
 .about__description {
   margin: 0 50px 50px;
   line-height: 2em; }
@@ -438,35 +466,35 @@ body {
     animation: slideInLeft;
     margin: 0 0 30px; }
     .advantages__item:nth-child(1) {
-      animation-delay: 300ms; }
+      animation-delay: 100ms; }
     .advantages__item:nth-child(2) {
-      animation-delay: 600ms; }
+      animation-delay: 200ms; }
     .advantages__item:nth-child(3) {
-      animation-delay: 900ms; }
+      animation-delay: 300ms; }
     .advantages__item:nth-child(4) {
-      animation-delay: 1200ms; }
+      animation-delay: 400ms; }
     .advantages__item:nth-child(5) {
-      animation-delay: 1500ms; }
+      animation-delay: 500ms; }
     .advantages__item:nth-child(6) {
-      animation-delay: 1800ms; }
+      animation-delay: 600ms; }
     .advantages__item:nth-child(7) {
-      animation-delay: 2100ms; }
+      animation-delay: 700ms; }
     .advantages__item:nth-child(8) {
-      animation-delay: 2400ms; }
+      animation-delay: 800ms; }
     .advantages__item:nth-child(9) {
-      animation-delay: 2700ms; }
+      animation-delay: 900ms; }
     .advantages__item:nth-child(10) {
-      animation-delay: 3000ms; }
+      animation-delay: 1000ms; }
     .advantages__item:nth-child(11) {
-      animation-delay: 3300ms; }
+      animation-delay: 1100ms; }
     .advantages__item:nth-child(12) {
-      animation-delay: 3600ms; }
+      animation-delay: 1200ms; }
     .advantages__item:nth-child(13) {
-      animation-delay: 3900ms; }
+      animation-delay: 1300ms; }
     .advantages__item:nth-child(14) {
-      animation-delay: 4200ms; }
+      animation-delay: 1400ms; }
     .advantages__item:nth-child(15) {
-      animation-delay: 4500ms; }
+      animation-delay: 1500ms; }
   .advantages__image {
     height: 90%; }
   .advantages__bottom-element {
@@ -792,7 +820,7 @@ body {
   .wonderland__block {
     display: flex;
     padding: 40px;
-    margin: 0 0 300px;
+    margin: 0 0 450px;
     background-color: #FFF7B9;
     border-radius: 50px; }
     @media (max-width: 768px) {
@@ -919,7 +947,9 @@ body {
     width: 30px;
     height: 30px;
     background-image: url(../img/social-1.png);
-    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     content: ""; }
   .footer__link-2::before {
     position: absolute;
@@ -927,7 +957,9 @@ body {
     width: 30px;
     height: 30px;
     background-image: url(../img/social-2.png);
-    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     content: ""; }
   .footer__link-3::before {
     position: absolute;
@@ -935,7 +967,9 @@ body {
     width: 30px;
     height: 30px;
     background-image: url(../img/social-3.png);
-    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     content: ""; }
   .footer__link-4::before {
     position: absolute;
@@ -943,7 +977,9 @@ body {
     width: 30px;
     height: 30px;
     background-image: url(../img/social-4.png);
-    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     content: ""; }
 
 .footer__container {
@@ -1063,11 +1099,11 @@ body {
 .slick-slide {
   margin: 0 27px; }
 
-.slick-prev {
-  color: #54595F; }
+.slick-prev::before {
+  color: #FED155; }
 
-.slick-next {
-  color: #54595F; }
+.slick-next::before {
+  color: #FED155; }
 
 /* the parent */
 .slick-list {

@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    
     <!--    animate css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <!--    jquery-->
@@ -23,6 +24,7 @@
     <!--    slick -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/>
+    <link rel="stylesheet" href="css/some.css">
     <script type="text/javascript" src="js/slick.js"></script>
     
     <!--fa-->
@@ -45,23 +47,43 @@
         </div>
         
         <div class="header__link-wrapper">
-          <a class="
-            header__link
-            footer__link-1
-          " href="https://www.facebook.com/wonderland.holosiivsky/"
-            target="_blank"
-          ></a>
-          <a class="
-            header__link
-            footer__link-2
-          " href="https://www.instagram.com/wonderland_holosiivsky/"
-            target="_blank"
-          ></a>
-          <a class="
-            header__link
-            hover--phone
-          " href="tel:800 339 859"> <i class="fa-solid fa-phone-volume icon__phone"></i>0 800 339 859</a>
+          <div class="header__social-wrapper">
+            <a class="
+              header__link
+              footer__link-1
+            " href="https://www.facebook.com/wonderland.holosiivsky/"
+              target="_blank"
+            ></a>
+            <a class="
+              header__link
+              footer__link-2
+            " href="https://www.instagram.com/wonderland_holosiivsky/"
+              target="_blank"
+            ></a>
+          </div>
+
+          <div class="header__contacts-wrapper">
+            <a class="
+                header__link
+                hover--phone
+                " href="mailto:wonderland.holosiivsky@gmail.com"
+                target="_blank"
+                >
+              <i class="fa-regular fa-envelope"></i>
+              Wonderland.holosiivsky@gmail.com
+            </a>
+
+            <a class="
+              header__link
+              hover--phone
+            " href="tel:800 339 859">
+              <i class="fa-solid fa-phone-volume icon__phone"></i>
+              0 800 339 859
+            </a>
+          </div>
         </div>
+
+        <span class="header__menu--show">Menu <i class="fa-solid fa-angle-down"></i></span>
 
         <nav class="page__menu menu">
           <ul class="menu__list">
@@ -73,6 +95,14 @@
               <a class="menu__link hover" href="#daily-routine">Розпорядок дня</a>
             </li>
       
+            <li class="menu__item ">
+              <a class="menu__link hover" href="#subjects">Наші заняття</a>
+            </li>
+
+            <li class="menu__item ">
+              <a class="menu__link hover" href="#price">Вартість</a>
+            </li>
+
             <li class="menu__item ">
               <a class="menu__link hover" href="#form">Записатись на екскурсію</a>
             </li>
@@ -106,9 +136,19 @@
               <li class="menu-mobile__item">
                 <a class="menu-mobile__link" href="#advantages">Наші переваги</a>
               </li>
+
               <li class="menu-mobile__item">
                 <a class="menu-mobile__link" href="#daily-routine">Розпорядок дня</a>
               </li>
+
+              <li class="menu-mobile__item">
+                <a class="menu-mobile__link" href="#subjects">Наші заняття</a>
+              </li>
+
+              <li class="menu-mobile__item">
+                <a class="menu-mobile__link" href="#price">Вартість</a>
+              </li>
+
               <li class="menu-mobile__item">
                 <a class="menu-mobile__link" href="#form">Записатись на екскурсію</a>
               </li>
@@ -154,6 +194,9 @@
               <img src="img/family.svg" alt="сім’я">
             </div>
           </div>
+
+          <h2 class="header__phrase page__block-title">Це не просто садочок, це поклик душі!</h2>
+
       </header>
 
       <main>
@@ -201,7 +244,6 @@
         
         <section class="about">
           <div class="container">
-            <h2 class="about__phrase page__block-title">Це не просто садочок, це поклик душі!</h2>
       
             <p class="about__description page__text">
               Ми створили особливу атмосферу сімейного комфорту, де кожен малюк почуває себе по-справжньому вільно та безпечно, як вдома. Ми впевнені, що наш садок стане для малюків чарівною країною, де збуваються мрії!
@@ -607,7 +649,7 @@
           </div>
         </section>
 
-        <section class="subjects">
+        <section id="subjects" class="subjects">
           <div class="subjects__top-block--el">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2600 131.1" preserveAspectRatio="none">
               <path class="elementor-shape-fill" d="M0 0L2600 0 2600 69.1 0 0z" fill="#D3FFCC"></path>
@@ -764,7 +806,7 @@
             </div>
 
           </div>
-          <div class="wonderland__price-block">
+          <div id="price" class="wonderland__price-block">
             <div class="container">
               <div class="wonderland__groups-wrapper">
                 <div class="wonderland__group">
@@ -810,7 +852,7 @@
           </div>
 
           <div class="wonderland__video-wrapper">
-            <iframe class="wonderland__video" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="Дитячий садочок «Wonderland» запрошує у гості! Голосіївський район ЖК Park Avenue" width="100%" height="100%" src="https://www.youtube.com/embed/jQ9L8fmAbEQ?controls=1&amp;rel=0&amp;playsinline=1&amp;modestbranding=0&amp;autoplay=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.wonderlandgarden.com.ua&amp;widgetid=3" id="widget4"></iframe>
+            <iframe class="wonderland__video" frameborder="0" allowfullscreen="1" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="Дитячий садочок «Wonderland» запрошує у гості! Голосіївський район ЖК Park Avenue" width="100%" height="100%" src="https://www.youtube.com/embed/jQ9L8fmAbEQ?controls=1&amp;rel=0&amp;playsinline=1&amp;modestbranding=0&amp;autoplay=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.wonderlandgarden.com.ua&amp;widgetid=3" id="widget4"></iframe>
           </div>
         </section>
         
@@ -880,7 +922,7 @@
                 " href="https://www.facebook.com/wonderland.holosiivsky/"
                   target="_blank"
                 >
-                  WonderLand
+                  Wonderland
                 </a>
                 
                 <a class="
@@ -890,7 +932,7 @@
                 " href="https://www.instagram.com/wonderland_holosiivsky/"
                   target="_blank"
                 >
-                  @WonderLand
+                  @Wonderland
                 </a>
                 
                 <a class="
@@ -910,7 +952,7 @@
                 " href="mailto:wonderland.holosiivsky@gmail.com"
                 target="_blank"
                 >
-                  WonderLand.holosiivsky@gmail.com
+                  Wonderland.holosiivsky@gmail.com
                 </a>
               </div>
           
@@ -924,7 +966,7 @@
 
                   <div class="footer__img">
                     <img src="img/footer-people.svg" alt="комунікація">
-                </div>
+                  </div>
               </div>
             </div>
           </div>
