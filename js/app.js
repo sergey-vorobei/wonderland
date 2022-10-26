@@ -54,11 +54,12 @@ $(document).ready(function(){
   $('.menu').on('mouseover', () => {
     $('.menu').fadeIn();
   })
-  // $('.menu').on('mouseout', () => {
-  //   $('.menu').fadeOut();
-  // })
+  
   $('.page').on('click', () => {
     $('.menu').fadeOut();
+  })
+  $('#popup-trigger-nav').on('click', () => {
+    $('#popup').show();
   })
 
 });
