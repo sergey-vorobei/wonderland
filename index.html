@@ -192,7 +192,7 @@
           </div>
 
           <h2 class="header__phrase page__block-title">Це не просто садочок, це поклик душі!</h2>
-
+        </div>
       </header>
 
       <main>
@@ -203,12 +203,12 @@
                 <div class="form__wrapper">
                   <h2 class="form__title page__block-title">Заповніть коротку форму</h2>
                   <span class="form__subtitle">щоб записатися на екскурсію та переконатися у комфорті та безпеці нашого садочку особисто</span>
-                  <form class="form__input-container" action="get">
+                  <form class="form__input-container" action="sendEmail.php" method="post">
                     <input
                       class="form__input"
                       type="text"
-                      name="Name"
-                      id=""
+                      name="name"
+                      value=""
                       placeholder="Ім'я"
                       required
                     >
@@ -216,19 +216,19 @@
                       class="form__input"
                       type="email"
                       name="email"
-                      id=""
+                      value=""
                       placeholder="Email"
                       required
                     >
                     <input
                       class="form__input"
-                      type="tel"
-                      name=""
-                      id=""
+                      type="text"
+                      name="message"
                       placeholder="Телефон"
+                      value=""
                       required
                     >
-                    <button class="form__button button">
+                    <button type="submit" name="send" class="form__button button">
                       Записатись на екскурсію
                     </button>
                   </form>
@@ -869,35 +869,36 @@
                 <div class="form__wrapper">
                   <h2 class="form__title page__block-title">Заповніть коротку форму</h2>
                   <span class="form__subtitle">щоб записатися на екскурсію та переконатися у комфорті та безпеці нашого садочку особисто</span>
-                  <form class="form__input-container" action="get">
+                  <form class="form__input-container" action="sendEmail.php" method="post">
                     <input
-                      class="form__input"
-                      type="text"
-                      name="Name"
-                      id=""
-                      placeholder="Ім'я"
-                      required
+                            class="form__input"
+                            type="text"
+                            name="name"
+                            value=""
+                            placeholder="Ім'я"
+                            required
                     >
                     <input
-                      class="form__input"
-                      type="email"
-                      name="email"
-                      id=""
-                      placeholder="Email"
-                      required
+                            class="form__input"
+                            type="email"
+                            name="email"
+                            value=""
+                            placeholder="Email"
+                            required
                     >
                     <input
-                      class="form__input"
-                      type="tel"
-                      name=""
-                      id=""
-                      placeholder="Телефон"
-                      required
+                            class="form__input"
+                            type="text"
+                            name="message"
+                            placeholder="Телефон"
+                            value=""
+                            required
                     >
-                    <button class="form__button button form__button-large-form">
+                    <button type="submit" name="send" class="form__button button">
                       Записатись на екскурсію
                     </button>
                   </form>
+
                 </div>
               </div>
             </div>
