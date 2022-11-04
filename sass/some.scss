@@ -152,8 +152,10 @@ body {
 
   &__link {
     @extend .footer__link;
+    font-size: 14px;
     margin-bottom: 0;
     margin-left: 15px;
+    align-self: center;
   }
   &__menu--show {
     position: absolute;
@@ -1314,6 +1316,9 @@ body {
   display: none;
 
   &__wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -1321,15 +1326,16 @@ body {
     border-radius: 20px;
     padding: 40px;
     width: 60%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
     color: $primary-text;
 
     @include onTablet {
-      width: 90%;
+      position: static;
+      width: auto;
+      height: 100vh;
       padding: 20px;
+      transform: none;
+      box-sizing: border-box;
     }
   }
   &__close {
@@ -1339,13 +1345,19 @@ body {
     cursor: pointer;
   }
   &__list {
+    height: 100%;
     margin: 0;
     padding: 0;
     list-style-type: none;
+
+    @include onTablet {
+      overflow-y: scroll;
+    }
   }
   &__item {
     display: flex;
     margin: 0 0 20px;
+    padding-right: 20px;
     line-height: 1.4;
     font-size: 18px;
     &:last-child {
