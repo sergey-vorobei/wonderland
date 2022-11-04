@@ -38,8 +38,13 @@ $(document).ready(function(){
   $('#menu-hide').on('click', () => {
     $('#menu-mobile').hide();
   })
+  
   $('.menu-mobile__link').on('click', () => {
     $('#menu-mobile').hide();
+  })
+
+  $('.menu-mobile__link--daily').on('click', () => {
+    $('#popup').show();
   })
 
 //Header MENU

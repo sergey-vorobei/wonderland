@@ -107,9 +107,7 @@ body {
     align-items: end; }
   .header__link {
     margin-bottom: 0;
-    font-size: 14px;
-    margin-left: 15px;
-    align-self: center;}
+    margin-left: 15px; }
   .header__menu--show {
     position: absolute;
     right: 0;
@@ -1061,6 +1059,10 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     color: #515151; }
+    @media (max-width: 768px) {
+      .popup__wrapper {
+        width: 90%;
+        padding: 20px; } }
   .popup__close {
     position: absolute;
     right: 20px;
@@ -1073,11 +1075,19 @@ body {
   .popup__item {
     display: flex;
     margin: 0 0 20px;
-    line-height: 1.4; }
+    line-height: 1.4;
+    font-size: 18px; }
     .popup__item:last-child {
       margin: 0; }
     .popup__item time {
       min-width: 130px; }
+      @media (max-width: 1024px) {
+        .popup__item time {
+          min-width: 100px; } }
+    @media (max-width: 1024px) {
+      .popup__item {
+        line-height: 1.2;
+        font-size: 15px; } }
   .popup__overlay {
     position: fixed;
     width: 100%;
@@ -1103,12 +1113,20 @@ body {
 .slick-slide {
   margin: 0 27px; }
 
+@media (max-width: 768px) {
+  .slick-prev {
+    left: -8px; } }
+
 .slick-prev::before {
   font-size: 30px;
   color: #FED155; }
   @media (max-width: 768px) {
     .slick-prev::before {
       font-size: 20px; } }
+
+@media (max-width: 768px) {
+  .slick-next {
+    right: -6px; } }
 
 .slick-next::before {
   font-size: 30px;

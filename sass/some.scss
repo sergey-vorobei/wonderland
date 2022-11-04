@@ -31,7 +31,7 @@ body {
       transform: scale(1.1);
     }
   }
-  
+
   &:hover {
     padding-bottom: 4px;
     border-bottom: rgba(145, 144, 135, 0.7) solid 2px;
@@ -252,7 +252,7 @@ body {
   background-color: $general-yellow;
 
   @include onDesktop {
-    display: none !important; 
+    display: none !important;
   }
 
   &__list {
@@ -273,7 +273,7 @@ body {
   }
 
   &__link-wrapper {
-    
+
     @include onDesktop {
       display: flex;
       flex-direction: column;
@@ -288,7 +288,7 @@ body {
     font-size: 18px;
     @include onDesktop {
       position: relative;
-      
+
     }
   }
 
@@ -324,7 +324,7 @@ body {
     margin: 0 0 80px;
     list-style-type: none;
   }
-  
+
   &__link {
     text-decoration: none;
     font-size: 18px;
@@ -341,7 +341,7 @@ body {
       font-size: 22px;
     }
   }
- 
+
   &__top-section {
     display: flex;
     justify-content: space-between;
@@ -396,8 +396,8 @@ body {
     bottom: 0;
     right: 0;
   }
-  
- 
+
+
   &__wrapper {
     max-width: 880px;
     display: flex;
@@ -409,11 +409,11 @@ body {
   &__title {
     margin: 0 0 5px;
     text-align: center;
-    
+
     @include onTablet {
       font-size: 25px;
     }
-  } 
+  }
 
   &__subtitle {
     margin: 0 0 20px;
@@ -429,7 +429,7 @@ body {
 
   &__input-container {
     width: 386px;
-    
+
     @include onTablet {
       width: 100%;
     }
@@ -449,7 +449,7 @@ body {
     font-size: 17px;
     font-weight: 400;
   }
-  
+
   &__button {
     width: 100%;
     height: 46px;
@@ -530,7 +530,7 @@ body {
     box-sizing: border-box;
 
     @include onTablet {
-      display: none;  
+      display: none;
     }
   }
 
@@ -634,7 +634,7 @@ body {
   &__item {
     animation: slideInLeft;
     margin: 0 0 30px;
-    
+
     @for $i from 1 through 15 {
       &:nth-child(#{$i}) {
         animation-delay: 100ms * $i;
@@ -704,7 +704,7 @@ body {
 
   margin: 0 0 100px;
   font-family: 'Comfortaa', cursive;
-  
+
   &__top {
     position: relative;
     background-color: $general-yellow;
@@ -774,7 +774,7 @@ body {
     line-height: 2;
     animation: slideInLeft;
 
-    
+
     &-1 {
       animation-delay: 200ms;
     }
@@ -800,7 +800,7 @@ body {
       font-size: 14px;
     }
   }
-  
+
   &__subtitle {
     margin: 0 0 60px;
     color: $title-text-color;
@@ -853,7 +853,7 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     animation: rollIn;
-    
+
     @for $index from 1 through 9 {
       &-#{$index} {
         background-image: url(../img/1-#{$index}.png);
@@ -972,7 +972,7 @@ body {
   &__top-block {
     background-color: $general-green;
 
-   
+
 
     &::after {
       content: '';
@@ -1151,7 +1151,7 @@ body {
     display: flex;
     justify-content: center;
 
-    
+
   }
   &__prise-text-wrapper {
     max-width: 880px;
@@ -1169,7 +1169,7 @@ body {
       display: flex;
       flex-direction: column;
       align-items: center;
-      
+
       &:nth-child(-n) {
         margin: 0 0 24px;
       }
@@ -1211,7 +1211,7 @@ body {
 }
 
 .footer {
-  
+
   &__contacts-wrapper {
     position: relative;
     width: 50%;
@@ -1260,7 +1260,7 @@ body {
     display: flex;
     align-items: center;
     margin: 0 0 50px;
-    
+
 
     @include onTablet {
       margin: 0;
@@ -1312,7 +1312,7 @@ body {
 
 .popup {
   display: none;
-  
+
   &__wrapper {
     display: flex;
     justify-content: space-around;
@@ -1326,6 +1326,11 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     color: $primary-text;
+
+    @include onTablet {
+      width: 90%;
+      padding: 20px;
+    }
   }
   &__close {
     position: absolute;
@@ -1340,15 +1345,24 @@ body {
   }
   &__item {
     display: flex;
-
     margin: 0 0 20px;
     line-height: 1.4;
+    font-size: 18px;
     &:last-child {
       margin: 0;
     }
 
     time {
       min-width: 130px;
+
+      @include onDesktop {
+        min-width: 100px;
+      }
+    }
+
+    @include onDesktop {
+      line-height: 1.2;
+      font-size: 15px;
     }
   }
   &__overlay {
@@ -1384,21 +1398,35 @@ body {
   &-slide {
     margin: 0 27px;
   }
-  
-  &-prev::before {
-    font-size: 30px;
-    color: $button-color;
+
+  &-prev {
+
     @include onTablet {
-      font-size: 20px;
+      left: -8px;
+    }
+
+    &::before {
+      font-size: 30px;
+      color: $button-color;
+
+      @include onTablet {
+        font-size: 20px;
+      }
     }
   }
 
-  &-next::before {
-    font-size: 30px;
-    color: $button-color;
+  &-next {
 
     @include onTablet {
-      font-size: 20px;
+      right: -6px;
+    }
+    &::before {
+      font-size: 30px;
+      color: $button-color;
+
+      @include onTablet {
+        font-size: 20px;
+      }
     }
   }
 }
